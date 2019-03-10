@@ -1,6 +1,6 @@
 {
   "name": "dd-vue-infinite",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Infinite scroll support based on vue 2 (SSR support)",
   "scripts": {
     "start": "npm run dev",
