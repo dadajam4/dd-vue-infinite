@@ -1,0 +1,49 @@
+{
+  "name": "dd-vue-infinite",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "nuxt-ts",
+    "docs": "nuxt-ts generate",
+    "build": "nuxt-ts build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dadajam4",
+  "license": "MIT",
+  "peerDependencies": {
+    "dd-event": "^0.2.0",
+    "dd-scroller": "^0.3.1",
+    "dd-visibility": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/webpack": "^4.4.25",
+    "@vue/babel-preset-app": "^3.4.1",
+    "dd-event": "^0.2.0",
+    "dd-plugboy": "^0.1.3",
+    "dd-scroller": "^0.3.1",
+    "dd-visibility": "^0.2.0",
+    "node-sass": "^4.11.0",
+    "nuxt-property-decorator": "^2.1.3",
+    "nuxt-ts": "^2.4.5",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-css-only": "^1.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-sass": "^1.1.0",
+    "rollup-plugin-typescript2": "^0.19.3",
+    "rollup-plugin-vue": "^4.7.2",
+    "sass-loader": "^7.1.0",
+    "vue-property-decorator": "^7.3.0"
+  },
+  "dependencies": {},
+  "files": [
+    "dist",
+    "types"
+  ],
+  "main": "dist/dd-vue-infinite.common.js",
+  "module": "dist/dd-vue-infinite.esm.js",
+  "jsdelivr": "dist/dd-vue-infinite.min.js",
+  "unpkg": "dist/dd-vue-infinite.min.js",
+  "types": "types/index.d.ts",
+  "sideeffects": false
+}

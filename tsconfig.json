@@ -1,0 +1,18 @@
+{
+  "extends": "@nuxt/typescript",
+  "compilerOptions": {
+    "baseUrl": ".",
+    // "declaration": true,
+    // "declarationDir": "./types",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    },
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "types": ["@types/node", "@types/webpack", "@nuxt/vue-app"]
+  },
+  "include": ["nuxt.config.ts", "./src"]
+}
