@@ -1,7 +1,7 @@
 {
   "name": "dd-vue-infinite",
   "version": "0.1.0",
-  "description": "",
+  "description": "Infinite scroll support based on vue 2 (SSR support)",
   "scripts": {
     "start": "npm run dev",
     "dev": "nuxt-ts",
@@ -9,8 +9,23 @@
     "build": "nuxt-ts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dadajam4/dd-vue-infinite.git"
+  },
+  "keywords": [
+    "vue",
+    "infinite",
+    "scroll",
+    "ssr",
+    "typescript"
+  ],
   "author": "dadajam4",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dadajam4/dd-vue-infinite/issues"
+  },
+  "homepage": "https://github.com/dadajam4/dd-vue-infinite#readme",
   "peerDependencies": {
     "dd-event": "^0.2.0",
     "dd-scroller": "^0.3.1",
