@@ -34,6 +34,14 @@ export interface ComputedPageData extends PageData {
   active: boolean;
 }
 
+export interface LoadingScopedProps {
+  type: LoadingType;
+  scroll: DDInfiniteScroll;
+  color?: string;
+  height: number;
+  value: boolean;
+}
+
 export const MIN_DEBOUNCE = 0;
 
 @Component({
@@ -66,6 +74,7 @@ export default class DDInfiniteScroll extends Vue {
   @Prop({ type: String }) pageTag?: string;
   @Prop({ type: String }) pageClass?: string;
   @Prop({ type: Object }) pageAttrs?: object;
+  @Prop({ type: String }) loadingColor?: string;
   @Prop({ type: [String, Number], default: 70 }) loadingHeight!:
     | string
     | number;
@@ -492,17 +501,27 @@ export default class DDInfiniteScroll extends Vue {
   }
 
   private createLoading(type: LoadingType, h = this.$createElement): VNode {
-    return h(DDInfiniteLoading, {
-      props: {
-        scroll: this,
-        height: this.computedLoadingHeight,
-        value: this.loadingActive[type],
+    const props: LoadingScopedProps = {
+      type,
+      scroll: this,
+      color: this.loadingColor,
+      height: this.computedLoadingHeight,
+      value: this.loadingActive[type],
+    };
+    const loadingSlot = this.$scopedSlots.loading;
+    const children = loadingSlot ? loadingSlot(props) : undefined;
+
+    return h(
+      DDInfiniteLoading,
+      {
+        props,
+        attrs: {
+          'dd-infinite-loading': type,
+        },
+        ref: type + 'Loading',
       },
-      attrs: {
-        'dd-infinite-loading': type,
-      },
-      ref: type + 'Loading',
-    });
+      children,
+    );
   }
 
   protected async created() {

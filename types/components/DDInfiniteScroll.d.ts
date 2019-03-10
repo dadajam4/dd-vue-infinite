@@ -23,6 +23,13 @@ export interface PageData {
 export interface ComputedPageData extends PageData {
     active: boolean;
 }
+export interface LoadingScopedProps {
+    type: LoadingType;
+    scroll: DDInfiniteScroll;
+    color?: string;
+    height: number;
+    value: boolean;
+}
 export declare const MIN_DEBOUNCE = 0;
 export default class DDInfiniteScroll extends Vue {
     $refs: {
@@ -37,6 +44,7 @@ export default class DDInfiniteScroll extends Vue {
     pageTag?: string;
     pageClass?: string;
     pageAttrs?: object;
+    loadingColor?: string;
     loadingHeight: string | number;
     triggerPerHeight: string | number;
     marginTop: string | number;

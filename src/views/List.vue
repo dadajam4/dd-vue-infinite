@@ -19,6 +19,7 @@
       margin-top="100"
       max-active-page="3"
       page-class="my-page"
+      loading-color="rgba(0, 0, 0, .5)"
     >
       <template v-slot:page="slotProps">
         <h2 class="my-page__title">Page: {{ slotProps.page }}</h2>

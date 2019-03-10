@@ -4,8 +4,12 @@ import pkg from './package.json';
 const ENV = process.env.NODE_ENV || 'development';
 const IS_PRODUCTION = ENV === 'production';
 const ROUTER_BASE = IS_PRODUCTION ? `/${pkg.name}/` : undefined;
+const mode = IS_PRODUCTION ? 'spa' : undefined;
+const routerMode = IS_PRODUCTION ? 'hash' : undefined;
 
 export default {
+  mode,
+
   srcDir: 'src/',
 
   generate: {
@@ -14,6 +18,7 @@ export default {
 
   router: {
     base: ROUTER_BASE,
+    mode: routerMode,
     extendRoutes(routes: RouteConfig[], resolve: Function) {
       routes.push(
         {
