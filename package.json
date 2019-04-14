@@ -1,8 +1,9 @@
 {
   "name": "dd-vue-infinite",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Infinite scroll support based on vue 2 (SSR support)",
   "scripts": {
+    "postinstall": "node postinstall.js",
     "start": "npm run dev",
     "dev": "nuxt-ts",
     "docs": "nuxt-ts generate",
